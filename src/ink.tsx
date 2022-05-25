@@ -74,11 +74,22 @@ export default class Ink {
 		// so that it's rerendered every time, not just new static parts, like in non-debug mode
 		this.fullStaticOutput = '';
 
+		// this.container = reconciler.createContainer(
+		// 	this.rootNode,
+		// 	// Legacy mode
+		// 	0,
+		// 	false,
+		// 	null
+		// );
+
 		this.container = reconciler.createContainer(
 			this.rootNode,
-			// Legacy mode
 			0,
+			null,
 			false,
+			false,
+			'_',
+			() => {},
 			null
 		);
 
