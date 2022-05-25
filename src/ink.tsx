@@ -76,11 +76,15 @@ export default class Ink {
 
 		this.container = reconciler.createContainer(
 			this.rootNode,
-			// Legacy mode
 			0,
+			null,
 			false,
+			false,
+			'_',
+			() => {},
 			null
 		);
+
 
 		// Unmount when process exits
 		this.unsubscribeExit = signalExit(this.unmount, {alwaysLast: false});
